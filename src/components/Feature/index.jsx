@@ -10,6 +10,7 @@ function Feature() {
         <section className="features">
             <h2 className="sr-only">Features</h2>
             <FeatureItem 
+                data-testid="feature-item-1-image-testid"
                 key={`Feature-item-1-${uuidv4()}`} 
                 imageSrc="/assets/img/icon-chat.png"
                 imageAlt="Chat Icon" 
@@ -18,6 +19,7 @@ function Feature() {
             >
             </FeatureItem>
             <FeatureItem 
+                data-testid="feature-item-2-image-testid"
                 key={`Feature-item-2-${uuidv4()}`} 
                 imageSrc="/assets/img/icon-money.png"
                 imageAlt="Chat Icon" 
@@ -26,6 +28,7 @@ function Feature() {
             >
             </FeatureItem>
             <FeatureItem 
+                data-testid="feature-item-3-image-testid"
                 key={`Feature-item-3-${uuidv4()}`} 
                 imageSrc="/assets/img/icon-security.png"
                 imageAlt="Chat Icon" 
