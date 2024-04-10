@@ -7,8 +7,8 @@ const uuidv4 = v4;
 function Feature() {
 
     return (
-        <section class="features">
-            <h2 class="sr-only">Features</h2>
+        <section className="features">
+            <h2 className="sr-only">Features</h2>
             <FeatureItem 
                 key={`Feature-item-1-${uuidv4()}`} 
                 imageSrc="/assets/img/icon-chat.png"
