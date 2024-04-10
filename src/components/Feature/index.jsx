@@ -1,4 +1,4 @@
-import { FeatureItem } from "../FeatureItem";
+import FeatureItem from "../FeatureItem";
 // eslint-disable-next-line import/order
 import { v4 } from 'uuid';
 
