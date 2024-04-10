@@ -1,14 +1,8 @@
 import backgroundImage from '../../assets/img/bank-tree.jpeg';
-import './style.css';
 
 function Hero() {
     const heroStyle = {
         backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: '0 -50px',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        height: '300px',
-        position: 'relative'
     };
 
     return (
