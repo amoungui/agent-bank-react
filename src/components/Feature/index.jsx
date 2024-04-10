@@ -11,7 +11,7 @@ function Feature() {
             <h2 class="sr-only">Features</h2>
             <FeatureItem 
                 key={`Feature-item-1-${uuidv4()}`} 
-                imageSrc="./img/icon-chat.png"
+                imageSrc="/assets/img/icon-chat.png"
                 imageAlt="Chat Icon" 
                 title="You are our #1 priority"
                 description="Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
@@ -19,7 +19,7 @@ function Feature() {
             </FeatureItem>
             <FeatureItem 
                 key={`Feature-item-2-${uuidv4()}`} 
-                imageSrc="./img/icon-money.png"
+                imageSrc="/assets/img/icon-money.png"
                 imageAlt="Chat Icon" 
                 title="More savings means higher rates"
                 description="The more you save with us, the higher your interest rate will be!"
@@ -27,7 +27,7 @@ function Feature() {
             </FeatureItem>
             <FeatureItem 
                 key={`Feature-item-3-${uuidv4()}`} 
-                imageSrc="./img/icon-security.png"
+                imageSrc="/assets/img/icon-security.png"
                 imageAlt="Chat Icon" 
                 title="Security you can trust"
                 description="We use top of the line encryption to make sure your data and money is always safe."
