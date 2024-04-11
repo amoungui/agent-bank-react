@@ -6,12 +6,12 @@ import { v4 } from 'uuid';
 
 const uuidv4 = v4;
 
-function FeatureItem({ imageSrc, imageAlt, title, description }) {
+function FeatureItem({ imageSrc, imageAlt, title, description, dataTestid }) {
 
 	return (
 		<div className="feature-item">
             <Image 
-                data-testid="feature-item-image-testid"
+                data-testid={dataTestid}
 				key={`Image-item-${uuidv4()}`}
                 imageSrc={imageSrc}
                 imageAlt={imageAlt}
@@ -26,10 +26,12 @@ FeatureItem.propTypes = {
 	imageSrc: PropTypes.string.isRequired,
 	imageAlt: PropTypes.string,
 	title: PropTypes.node.isRequired,
+	dataTestid: PropTypes.string,
 };
 
 FeatureItem.defaultProps = {
-	imageAlt: "image"
+	imageAlt: "image",
+	dataTestid: "feature-item-image-testid"
 }
 
 export default FeatureItem
