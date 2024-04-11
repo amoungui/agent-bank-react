@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
+import Image from "../Image";
 
 function FeatureItem({ imageSrc, imageAlt, title, description }) {
 
 	return (
 		<div class="feature-item">
-			<img
-				data-testid="feature-item-image-testid"
-				src={imageSrc}
-				alt={process.env.PUBLIC_URL + imageAlt}
-				class="feature-icon"
-			/>
+            <Image 
+                data-testid="feature-item-image-testid"
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+            />
 			<h3 class="feature-item-title">{title}</h3>
 			<p>{description}</p>
 		</div>
@@ -19,7 +19,7 @@ function FeatureItem({ imageSrc, imageAlt, title, description }) {
 FeatureItem.propTypes = {
 	imageSrc: PropTypes.string.isRequired,
 	imageAlt: PropTypes.string,
-	children: PropTypes.node.isRequired,
+	title: PropTypes.node.isRequired,
 };
 
 FeatureItem.defaultProps = {
