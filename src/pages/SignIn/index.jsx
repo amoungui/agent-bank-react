@@ -1,4 +1,12 @@
 import { Link } from 'react-router-dom'
+import Field from "../../components/Field";
+
+export const FIELD_TYPES = {
+  INPUT_TEXT: 1,
+  TEXTAREA: 2,
+  CHECKBOX: 3,
+  PASSWORD: 4
+};
 
 function SignIn() {
     
@@ -9,16 +17,28 @@ function SignIn() {
         <h1>Sign In</h1>
         <form>
           <div className="input-wrapper">
-            <label for="username">Username</label>
-            <input type="text" id="username" />
+            <Field 
+              type={FIELD_TYPES.INPUT_TEXT} 
+              placeholder="" 
+              label="Username" 
+              id="username" 
+            />
           </div>
           <div className="input-wrapper">
-            <label for="password">Password</label>
-            <input type="password" id="password" />
+            <Field 
+              type={FIELD_TYPES.PASSWORD} 
+              placeholder="" 
+              label="Password" 
+              id="password" 
+            />
           </div>
           <div className="input-remember">
-            <input type="checkbox" id="remember-me" />
-            <label for="remember-me">Remember me</label>
+            <Field 
+                type={FIELD_TYPES.CHECKBOX} 
+                placeholder="" 
+                label="Remember me" 
+                id="remember-me" 
+            />
           </div>
           <Link href="./user.html" className="sign-in-button">Sign In</Link>
         </form>
