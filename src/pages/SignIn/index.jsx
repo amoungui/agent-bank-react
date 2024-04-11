@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 function SignIn() {
     
@@ -19,7 +20,7 @@ function SignIn() {
             <input type="checkbox" id="remember-me" />
             <label for="remember-me">Remember me</label>
           </div>
-          <a href="./user.html" className="sign-in-button">Sign In</a>
+          <Link href="./user.html" className="sign-in-button">Sign In</Link>
         </form>
       </section>
     </main>
