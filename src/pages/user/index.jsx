@@ -1,3 +1,4 @@
+import Button from "../../components/Button";
 
 function User() {
     
@@ -5,7 +6,10 @@ function User() {
     <main class="main bg-dark">
       <div class="header">
         <h1>Welcome back<br />Tony Jarvis!</h1>
-        <button class="edit-button">Edit Name</button>
+        <Button
+            className="edit-button"
+            title="Edit Name"
+        />
       </div>
       <h2 class="sr-only">Accounts</h2>
       <section class="account">
@@ -15,7 +19,10 @@ function User() {
           <p class="account-amount-description">Available Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+          <Button
+            className="transaction-button"
+            title="View transactions"
+          />
         </div>
       </section>
       <section class="account">
@@ -25,7 +32,10 @@ function User() {
           <p class="account-amount-description">Available Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+          <Button
+              className="transaction-button"
+              title="View transactions"
+          />
         </div>
       </section>
       <section class="account">
@@ -35,7 +45,10 @@ function User() {
           <p class="account-amount-description">Current Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+          <Button
+              className="transaction-button"
+              title="View transactions"
+          />
         </div>
       </section>
     </main>
