@@ -41,6 +41,6 @@ describe("When a Header component is created", () => {
 
         // Ici, nous allons ajouter des vérifications en fonction de ce que vous attendez après le clic sur le lien
         // si on attende une redirection vers une autre page, nous devons vérifier l'URL actuelle
-        expect(window.location.href).toBe('http://localhost/'); //pour le moment nous n'avons pas encore définir l'url de la page de connexion
+        expect(window.location.href).toBe('http://localhost/signin'); //pour le moment nous n'avons pas encore définir l'url de la page de connexion
     });
 });
