@@ -40,7 +40,7 @@ function SignIn() {
                 id="remember-me" 
             />
           </div>
-          <Link href="./user.html" className="sign-in-button">Sign In</Link>
+          <Link to="/user" className="sign-in-button">Sign In</Link>
         </form>
       </section>
     </main>
