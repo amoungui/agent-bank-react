@@ -7,7 +7,7 @@ function Image({ imageSrc, imageAlt, dataTestid }) {
             data-testid= {dataTestid}
             src={process.env.PUBLIC_URL + imageSrc}
             alt={imageAlt}
-            class="feature-icon"
+            className="feature-icon"
         />
 	)
 }
