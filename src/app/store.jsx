@@ -1,15 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-let state = {
-    value: null,
-    list: []
-};
+let state = { user: null };
 
-const reducer = (currentState, action ) => {
+const reducer = (currentState = state, action ) => {
     switch (action.type) {
         case 'SIGN_IN':
-            const newData = [...currentState.list, action.payload]
-            return {...currentState, list: newData}
+            return { ...state, user: action.payload };
         case 'SIGN_OUT':
             const list = []
             return {...currentState, list: list}
