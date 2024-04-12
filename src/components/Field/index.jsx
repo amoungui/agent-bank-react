@@ -12,52 +12,68 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
   switch (type) {
     case FIELD_TYPES.INPUT_TEXT:
       component = (
-        <input
-          id={id}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          data-testid="field-testid"
-        />
+        <div>
+          <label for={id}>{label}</label>
+          <input
+            id={id}
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            data-testid="field-testid"
+          />          
+        </div>
       );
       break;
       case FIELD_TYPES.PASSWORD:
         component = (
-          <input
-            id={id}
-            type="password"
-            name={name}
-            placeholder={placeholder}
-            data-testid="field-testid"
-          />
+          <div>
+            <label for={id}>{label}</label>
+            <input
+              id={id}
+              type="password"
+              name={name}
+              placeholder={placeholder}
+              data-testid="field-testid"
+            />            
+          </div>
         );
         break;
     case FIELD_TYPES.TEXTAREA:
-      component = <textarea name={name} data-testid="field-testid" />;
+      component = (
+        <div>
+          <label for={id}>{label}</label>
+          <textarea name={name} data-testid="field-testid" />;
+        </div>
+      )
       break;
       case FIELD_TYPES.CHECKBOX:
         component = (
-          <input 
-            type="checkbox" 
-            id={id} 
-            data-testid="field-testid" 
-          />
+          <div>
+            <input 
+              type="checkbox" 
+              id={id} 
+              data-testid="field-testid" 
+            />
+            <label for={id}>{label}</label>
+          </div>
         );
         break;      
     default:
       component = (
-        <input
-          id={id}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          data-testid="field-testid"
-        />
+        <div>
+          <label for={id}>{label}</label>
+          <input
+            id={id}
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            data-testid="field-testid"
+          />          
+        </div>
       );
   }
   return (
     <div>
-      <label for={id}>{label}</label>
       {component}
     </div>
   );
