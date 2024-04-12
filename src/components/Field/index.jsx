@@ -13,7 +13,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
     case FIELD_TYPES.INPUT_TEXT:
       component = (
         <div>
-          <label for={id}>{label}</label>
+          <label htmlFor={id}>{label}</label>
           <input
             id={id}
             type="text"
@@ -27,7 +27,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
       case FIELD_TYPES.PASSWORD:
         component = (
           <div>
-            <label for={id}>{label}</label>
+            <label htmlFor={id}>{label}</label>
             <input
               id={id}
               type="password"
@@ -41,7 +41,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
     case FIELD_TYPES.TEXTAREA:
       component = (
         <div>
-          <label for={id}>{label}</label>
+          <label htmlFor={id}>{label}</label>
           <textarea name={name} data-testid="field-testid" />;
         </div>
       )
@@ -54,14 +54,14 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
               id={id} 
               data-testid="field-testid" 
             />
-            <label for={id}>{label}</label>
+            <label htmlFor={id}>{label}</label>
           </div>
         );
         break;      
     default:
       component = (
         <div>
-          <label for={id}>{label}</label>
+          <label htmlFor={id}>{label}</label>
           <input
             id={id}
             type="text"

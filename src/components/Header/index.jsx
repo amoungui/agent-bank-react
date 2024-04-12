@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function Header() {
-
+    const user = useSelector(state => state.user);
     return (
         <header>
             <nav className="main-nav">
+                {user}
                 <Link className="main-nav-logo" to="/">
                     <img
                     data-testid="header-image-testid"
