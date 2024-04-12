@@ -19,9 +19,11 @@ const reducer = (currentState, action ) => {
     }
 }
 
-export const store = configureStore(
+const store = configureStore(
     {
         preloadedState: state,
         reducer
     }
 )
+
+export default store
