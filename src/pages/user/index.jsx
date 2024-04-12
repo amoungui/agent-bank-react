@@ -4,15 +4,15 @@ import Button from "../../components/Button";
 function User() {
     
   return (
-    <main class="main bg-dark">
-      <div class="header">
+    <main className="main bg-dark">
+      <div className="header">
         <h1>Welcome back<br />Tony Jarvis!</h1>
         <Button
             className="edit-button"
             title="Edit Name"
         />
       </div>
-      <h2 class="sr-only">Accounts</h2>
+      <h2 className="sr-only">Accounts</h2>
       <Card 
         accountTitle="Argent Bank Checking (x8349)" 
         accountAmount="$2,082.79"
