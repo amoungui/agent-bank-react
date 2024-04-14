@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 function Header() {
-    const isLoggedIn = useSelector(state => state.token !== null); // Vérifier le jeton
+    const isLoggedIn = useSelector(state => state.token !== null && state.token !== ''); // Vérifier le jeton
     console.log("check if user is logged", isLoggedIn);
     if (isLoggedIn){
         return (
