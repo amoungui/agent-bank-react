@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Field from "../../components/Field";
-import { useDispatch } from "react-redux";
-import { signIn } from "../../context/DataContext/index";
+import store from "../../app/store";
+import { signIn, getUserDetails } from '../../context/DataContext/index';
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
@@ -11,13 +11,14 @@ export const FIELD_TYPES = {
 };
 
 function SignIn() {
-	const dispatch = useDispatch();
-	const handleSubmit = event => {
+
+	const handleSubmit = async event => {
 		event.preventDefault();
 		const username = event.target.elements.username.value;
 		const password = event.target.elements.password.value;
-		dispatch(signIn(username, password));
-	};	
+		const token = await store.dispatch({ type: 'SIGN_IN', payload: signIn(username, password) });
+		await store.dispatch({ type: 'GET_USER_DETAILS', payload: getUserDetails(token) });
+	};
 
 	return (
 		<main className="main bg-dark">
