@@ -1,15 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-let state = { 
-    value: null,
+let preloadedState = { 
+    auth: {
+        token: null,
+        user: null,
+    },
 };
 
-const reducer = (currentState = state, action ) => {
+const reducer = (currentState = preloadedState.auth, action ) => {
     switch (action.type) {
         case 'SIGN_IN':
             return { ...currentState, token: action.payload };
         case 'SIGN_OUT':
-            return {...currentState, token: action.payload}
+            return {...currentState, token: null}
         case 'GET_USER_DETAILS':
             return {...currentState, user: action.payload}            
 
@@ -18,11 +21,11 @@ const reducer = (currentState = state, action ) => {
     }
 }
 
-const store = configureStore(
-    {
-        preloadedState: state,
-        reducer
-    }
-)
+const store = configureStore({
+  reducer: {
+    auth: reducer,
+  },
+  preloadedState,
+});
 
-export default store
+export default store;

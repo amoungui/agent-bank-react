@@ -16,9 +16,11 @@ function SignIn() {
 		event.preventDefault();
 		const username = event.target.elements.username.value;
 		const password = event.target.elements.password.value;
-		const token = await store.dispatch({ type: 'SIGN_IN', payload: signIn(username, password) });
-		await store.dispatch({ type: 'GET_USER_DETAILS', payload: getUserDetails(token) });
-	};
+		const signInResult = await signIn(username, password);
+		store.dispatch({ type: 'SIGN_IN', payload: signInResult.token });
+		const userDetails = await getUserDetails(signInResult.token);
+		store.dispatch({ type: 'GET_USER_DETAILS', payload: userDetails });
+	};				
 
 	return (
 		<main className="main bg-dark">
