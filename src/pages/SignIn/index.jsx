@@ -1,5 +1,6 @@
 import Field from "../../components/Field";
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { signIn } from '../../context/DataContext/index';
 
 export const FIELD_TYPES = {
@@ -11,6 +12,7 @@ export const FIELD_TYPES = {
 
 
 function SignIn() {
+	const navigate  = useNavigate();
 	const dispatch = useDispatch();
 	const auth = useSelector(state => state.auth); // access your auth state
 	console.log(auth);
@@ -33,6 +35,7 @@ function SignIn() {
 			console.error("Erreur lors de la connexion:", error);
 		}
 		dispatch(signIn(token));
+		navigate('/user');  // redirect to /user
 	};
 
 	return (
