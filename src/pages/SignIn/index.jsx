@@ -17,26 +17,27 @@ function SignIn() {
 	const auth = useSelector(state => state.auth); // access your auth state
 	console.log(auth);
 
-	const handleSignIn = (event) => {
-		let token = ""
+	const handleSignIn = async (event) => {
 		event.preventDefault();
 		const username = event.target.elements.username.value;
 		const password = event.target.elements.password.value;		
 		try {
-			const response = fetch("http://localhost:3001/user/login", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ username, password }),
-			});
-			const data = response.json();
-			token = data.token
-			// console.log(data);
+		  const response = await fetch("http://localhost:3001/user/login", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ username, password }),
+		  });
+		  if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		  }
+		  const data = await response.json();
+		  const token = data.token;
+		  dispatch(signIn(token));
+		  navigate('/user'); // redirect to /user
 		} catch (error) {
-			console.error("Erreur lors de la connexion:", error);
+		  console.error("Erreur lors de la connexion:", error);
 		}
-		dispatch(signIn(token));
-		navigate('/user');  // redirect to /user
-	};
+	};	  
 
 	return (
 		<main className="main bg-dark">
