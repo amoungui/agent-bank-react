@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Field from "../../components/Field";
-import store from "../../app/store";
+// import store from "../../app/store";
+import { useDispatch } from 'react-redux';
 import { signIn, getUserDetails } from '../../context/DataContext/index';
 
 export const FIELD_TYPES = {
@@ -11,15 +12,16 @@ export const FIELD_TYPES = {
 };
 
 function SignIn() {
+	const dispatch = useDispatch();
 
 	const handleSubmit = async event => {
 		event.preventDefault();
 		const username = event.target.elements.username.value;
 		const password = event.target.elements.password.value;
 		const signInResult = await signIn(username, password);
-		store.dispatch({ type: 'SIGN_IN', payload: signInResult.token });
+		dispatch({ type: 'SIGN_IN', payload: signInResult.token });
 		const userDetails = await getUserDetails(signInResult.token);
-		store.dispatch({ type: 'GET_USER_DETAILS', payload: userDetails });
+		dispatch({ type: 'GET_USER_DETAILS', payload: userDetails });
 	};				
 
 	return (
