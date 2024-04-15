@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import Field from "../../components/Field";
-// import store from "../../app/store";
-import { useDispatch } from 'react-redux';
-import { signIn, getUserDetails } from '../../context/DataContext/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { signIn } from '../../context/DataContext/index';
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
@@ -11,25 +9,38 @@ export const FIELD_TYPES = {
   PASSWORD: 4,
 };
 
+
 function SignIn() {
 	const dispatch = useDispatch();
+	const auth = useSelector(state => state.auth); // access your auth state
+	console.log(auth);
 
-	const handleSubmit = async event => {
+	const handleSignIn = (event) => {
+		let token = ""
 		event.preventDefault();
 		const username = event.target.elements.username.value;
-		const password = event.target.elements.password.value;
-		const signInResult = await signIn(username, password);
-		dispatch({ type: 'SIGN_IN', payload: signInResult.token });
-		const userDetails = await getUserDetails(signInResult.token);
-		dispatch({ type: 'GET_USER_DETAILS', payload: userDetails });
-	};				
+		const password = event.target.elements.password.value;		
+		try {
+			const response = fetch("http://localhost:3001/user/login", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ username, password }),
+			});
+			const data = response.json();
+			token = data.token
+			// console.log(data);
+		} catch (error) {
+			console.error("Erreur lors de la connexion:", error);
+		}
+		dispatch(signIn(token));
+	};
 
 	return (
 		<main className="main bg-dark">
 		<section className="sign-in-content">
 			<i className="fa fa-user-circle sign-in-icon"></i>
 			<h1>Sign In</h1>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSignIn}>
 			<div className="input-wrapper">
 				<Field
 				type={FIELD_TYPES.INPUT_TEXT}
@@ -54,9 +65,7 @@ function SignIn() {
 				id="remember-me"
 				/>
 			</div>
-			<Link to="/user" className="sign-in-button">
-				Sign In
-			</Link>
+			<input type="submit" value="Sign In" className="sign-in-button" />
 			</form>
 		</section>
 		</main>
