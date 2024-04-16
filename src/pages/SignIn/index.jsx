@@ -1,7 +1,7 @@
 import Field from "../../components/Field";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signIn } from '../../context/DataContext/index';
+import { signIn } from '../../context/DataContext/index'
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
@@ -19,24 +19,31 @@ function SignIn() {
 
 	const handleSignIn = async (event) => {
 		event.preventDefault();
-		const username = event.target.elements.username.value;
-		const password = event.target.elements.password.value;		
-		try {
-		  const response = await fetch("http://localhost:3001/user/login", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username, password }),
-		  });
-		  if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
-		  }
-		  const data = await response.json();
-		  const token = data.token;
-		  dispatch(signIn(token));
-		  navigate('/user'); // redirect to /user
-		} catch (error) {
-		  console.error("Erreur lors de la connexion:", error);
-		}
+		const email = event.target.elements.username.value.toString();
+		const password = event.target.elements.password.value.toString();
+		if (email!== "" && password !== ""){
+			try {
+			const response = await fetch("http://localhost:3001/api/v1/user/login", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email, password }),
+			});
+			if (!response.ok) {
+				const errorBody = await response.json();
+				console.error('Erreur lors de la connexion:', errorBody);
+				throw new Error(`HTTP error! status: ${response.status}`);
+			  }
+			  
+			const data = await response.json();
+			const token = data.token;
+			dispatch(signIn(token));
+			navigate('/user'); // redirect to /user
+			} catch (error) {
+			console.error("Erreur lors de la connexion:", error);
+			}
+		}else{
+			console.log("username or password doesn't existe");
+		}		
 	};	  
 
 	return (
