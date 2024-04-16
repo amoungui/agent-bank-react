@@ -2,6 +2,7 @@ import Field from "../../components/Field";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from '../../context/DataContext/index'
+import store from "../../app/store";
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
@@ -35,7 +36,10 @@ function SignIn() {
 			  }
 			  
 			const data = await response.json();
-			const token = data.token;
+			console.log('data: ', data);
+			const token = data.body.token;
+			console.log("data.token", token)
+			console.log(signIn(token))
 			dispatch(signIn(token));
 			navigate('/user'); // redirect to /user
 			} catch (error) {
