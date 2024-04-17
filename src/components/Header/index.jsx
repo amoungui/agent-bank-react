@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-// import store from "../../app/store";
+import { useSelector, useDispatch } from 'react-redux';
+import { signOut } from '../../context/DataContext/index';
+
 
 function Header() {
-    const isLoggedIn = useSelector(state => state.auth.token); // Vérifier le jeton
-    console.log("check if user is logged", isLoggedIn);
+    const isLoggedIn = useSelector(state => state.auth.token);
+    const dispatch = useDispatch();
+
+    const handleSignOut = () => {
+        dispatch(signOut());
+    };
+
     if (isLoggedIn){
         return (
             <header>
@@ -24,7 +30,7 @@ function Header() {
                             <i className="fa fa-user-circle"></i>
                             Tony
                         </Link>
-                        <Link className="main-nav-item" to="/">
+                        <Link className="main-nav-item" to="/" onClick={handleSignOut}>
                             <i className="fa fa-sign-out"></i>
                             Sign Out
                         </Link>

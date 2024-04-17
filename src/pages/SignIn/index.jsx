@@ -2,7 +2,6 @@ import Field from "../../components/Field";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from '../../context/DataContext/index'
-import store from "../../app/store";
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
