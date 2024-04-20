@@ -7,9 +7,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import SignIn from './pages/SignIn'
 import User from "./pages/User";
+import Profil from './pages/Profil';
 import store from "./app/store"
 
 import './assets/css/main.css'
+
 
 
 
@@ -24,6 +26,7 @@ root.render(
 					<Route path="/" element={<Home />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/user" element={<User />} />
+					<Route path="/profil" element={<Profil />} />
 				</Routes>
 				<Footer />
 			</Router>		

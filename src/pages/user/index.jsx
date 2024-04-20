@@ -10,6 +10,7 @@ function User() {
 		<Button
 			className="edit-button"
 			title="Edit Name"
+			path="/profil"
 		/>
 		</div>
 		<h2 className="sr-only">Accounts</h2>

@@ -1,7 +1,7 @@
 import Field from "../../components/Field";
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { signIn } from '../../context/DataContext/index'
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
+// import { signIn } from '../../context/DataContext/index'
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
@@ -14,8 +14,8 @@ export const FIELD_TYPES = {
 function Profil() {
 //	const navigate  = useNavigate();
 //	const dispatch = useDispatch();
-	const auth = useSelector(state => state.auth); // access your auth state
-	console.log(auth);
+//	const auth = useSelector(state => state.auth); // access your auth state
+// 	console.log(auth);
 
 	return (
 		<main className="main bg-dark">

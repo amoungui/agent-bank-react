@@ -5,7 +5,7 @@ function Button({title, className, path}) {
     const navigate = useNavigate();
     
     const handleClick = () => {
-        navigate({path});  
+        navigate(path);  
     }
 
     return (
