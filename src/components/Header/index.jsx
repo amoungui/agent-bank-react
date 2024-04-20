@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../../context/DataContext/index';
 
-
 function Header() {
     const isLoggedIn = useSelector(state => state.auth.token);
+    const username = useSelector(state => state.auth.username) || localStorage.getItem('username');
     const dispatch = useDispatch();
 
     const handleSignOut = () => {
         dispatch(signOut());
+        // localStorage.removeItem('username');
     };
 
     if (isLoggedIn){
@@ -28,7 +29,7 @@ function Header() {
                     <div>
                         <Link className="main-nav-item" to="/user">
                             <i className="fa fa-user-circle"></i>
-                            Tony
+                            {username ? username : 'Tony'}
                         </Link>
                         <Link className="main-nav-item" to="/" onClick={handleSignOut}>
                             <i className="fa fa-sign-out"></i>
@@ -65,4 +66,4 @@ function Header() {
 
 }
 
-export default Header
+export default Header;

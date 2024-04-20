@@ -5,6 +5,7 @@ let preloadedState = {
         token: null,
         email: null,
         user: null,
+        username: null,
     },
 };
 
@@ -15,7 +16,7 @@ const reducer = (currentState = preloadedState.auth, action ) => {
         case 'SIGN_OUT':
             return {...currentState, token: null}
         case 'GET_USER_DETAILS':
-            return {...currentState, user: action.payload}            
+            return {...currentState, username: action.payload}            
 
         default:
             return currentState
