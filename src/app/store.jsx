@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit"
 let preloadedState = { 
     auth: {
         token: null,
+        email: null,
         user: null,
     },
 };

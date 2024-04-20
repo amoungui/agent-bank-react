@@ -35,10 +35,7 @@ function SignIn() {
 			  }
 			  
 			const data = await response.json();
-			console.log('data: ', data);
 			const token = data.body.token;
-			console.log("data.token", token)
-			console.log(signIn(token))
 			dispatch(signIn(token));
 			navigate('/user'); // redirect to /user
 			} catch (error) {
