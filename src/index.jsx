@@ -10,7 +10,7 @@ import User from "./pages/user";
 import Profil from './pages/Profil';
 import store from "./app/store"
 
-import './assets/css/main.css'
+import './assets/css/main.min.css'
 
 
 
