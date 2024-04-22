@@ -14,24 +14,32 @@ function Profil() {
 	const auth = useSelector(state => state.auth); // access your auth state
  	console.log(auth);
 
-    const handleEditName = async (event) => {
+     const handleEditName = async (event) => {
         event.preventDefault();
         const username = event.target.elements.username.value.toString();
         try {
-            const response = await fetch("http://localhost:3001/api/v1/user/profile", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${auth.token}` // Pass the token here
-                },
-                body: JSON.stringify({ username }),
-            });
-            if (!response.ok) {
-                const errorBody = await response.json();
-                console.error('Erreur lors de la connexion:', errorBody);
-                throw new Error(`HTTP error! status: ${response.status}`);
+            const cache = await caches.open('user-profile');
+            const cachedResponse = await cache.match("http://localhost:3001/api/v1/user/profile");
+            let response;
+            if (cachedResponse) {
+                response = cachedResponse;
+            } else {
+                response = await fetch("http://localhost:3001/api/v1/user/profile", {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${auth.token}` // Pass the token here
+                    },
+                    body: JSON.stringify({ username }),
+                });
+                if (!response.ok) {
+                    const errorBody = await response.json();
+                    console.error('Erreur lors de la connexion:', errorBody);
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
+                // Mettre en cache la réponse
+                cache.put("http://localhost:3001/api/v1/user/profile", response.clone());
+            }
             const data = await response.json();
             dispatch(signIn(data.body.token));
             dispatch(signIn(username));
@@ -41,7 +49,7 @@ function Profil() {
         } catch (error) {
             console.error("Erreur lors de la connexion:", error);
         }
-    };
+    };    
     
 	return (
 		<main className="main bg-dark">
