@@ -1,4 +1,4 @@
-import backgroundImage from '../../assets/img/bank-tree.jpeg';
+import backgroundImage from '../../assets/img/bank-tree.webp';
 
 function Hero() {
     const heroStyle = {

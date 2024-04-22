@@ -20,7 +20,7 @@ function Header() {
                         <img
                         data-testid="header-image-testid"
                         className="main-nav-logo-image"
-                        src={process.env.PUBLIC_URL + '/assets/img/argentBankLogo.png'}
+                        src={process.env.PUBLIC_URL + '/assets/img/argentBankLogo.webp'}
                         alt="Argent Bank Logo"
                         />
                         <h1 className="sr-only">Argent Bank</h1>
@@ -47,7 +47,7 @@ function Header() {
                         <img
                         data-testid="header-image-testid"
                         className="main-nav-logo-image"
-                        src={process.env.PUBLIC_URL + '/assets/img/argentBankLogo.png'}
+                        src={process.env.PUBLIC_URL + '/assets/img/argentBankLogo.webp'}
                         alt="Argent Bank Logo"
                         />
                         <h1 className="sr-only">Argent Bank</h1>
