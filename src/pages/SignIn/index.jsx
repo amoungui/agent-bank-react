@@ -23,28 +23,37 @@ function SignIn() {
 		const password = event.target.elements.password.value.toString();
 		if (email!== "" && password !== ""){
 			try {
-			const response = await fetch("http://localhost:3001/api/v1/user/login", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ email, password }),
-			});
-			if (!response.ok) {
-				const errorBody = await response.json();
-				console.error('Erreur lors de la connexion:', errorBody);
-				throw new Error(`HTTP error! status: ${response.status}`);
-			  }
-			  
-			const data = await response.json();
-			const token = data.body.token;
-			dispatch(signIn(token));
-			navigate('/user'); // redirect to /user
+				const cache = await caches.open('user-login');
+				const cachedResponse = await cache.match("http://localhost:3001/api/v1/user/login");
+				let response;
+				if (cachedResponse) {
+					response = cachedResponse;
+				} else {
+					response = await fetch("http://localhost:3001/api/v1/user/login", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ email, password }),
+					});
+					if (!response.ok) {
+						const errorBody = await response.json();
+						console.error('Erreur lors de la connexion:', errorBody);
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+					// Mettre en cache la réponse
+					cache.put("http://localhost:3001/api/v1/user/login", response.clone());
+				}
+				const data = await response.json();
+				const token = data.body.token;
+				dispatch(signIn(token));
+				navigate('/user'); // redirect to /user
 			} catch (error) {
-			console.error("Erreur lors de la connexion:", error);
+				console.error("Erreur lors de la connexion:", error);
 			}
 		}else{
 			console.log("username or password doesn't existe");
 		}		
-	};	  
+	};
+		  
 
 	return (
 		<main className="main bg-dark">
