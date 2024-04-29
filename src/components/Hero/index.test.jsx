@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 // Importation du composant 'Hero' depuis le répertoire courant
 import Hero from "./index";
 
-import backgroundImage from '../../assets/img/bank-tree.jpeg';
+import backgroundImage from '../../assets/img/bank-tree.webp';
 
 // Début du bloc describe des tests pour le composant 'Hero'
 describe("When a Hero component is created", () => {
