@@ -1,7 +1,8 @@
 // Importation des fonctions 'render' et 'screen' depuis la bibliothèque '@testing-library/react'
 import { render, screen, fireEvent  } from "@testing-library/react";
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import store from '../../app/store';
 // Importation du composant 'Header' depuis le répertoire courant
 import Header from "./index";
 
@@ -10,10 +11,12 @@ describe("When a Header component is created", () => {
     // Test spécifique pour vérifier que le logo du header est affiché
     it("an image is display with alt value",  () => {
         render(
-            <Router>
+            <Provider store={store}>
+              <Router>
                 <Header />
-            </Router>
-        )
+              </Router>
+            </Provider>
+        );
         
         // Récupération de l'élément image par son testId
         const imageElement = screen.getByTestId("header-image-testid");
@@ -28,11 +31,12 @@ describe("When a Header component is created", () => {
     // Test spécifique pour vérifier que le lien 'Sign In' est cliquable
     it("Check signin link", () => { 
         render(
-            <Router>
+            <Provider store={store}>
+              <Router>
                 <Header />
-            </Router>
-        )
-
+              </Router>
+            </Provider>
+        );
         // Récupération de l'élément lien par son texte
         const linkElement = screen.getByText(/Sign In/i);
 
