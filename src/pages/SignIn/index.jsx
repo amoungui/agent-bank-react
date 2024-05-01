@@ -54,40 +54,42 @@ function SignIn() {
 		}		
 	};
 		  
-
 	return (
 		<main className="main bg-dark">
-		<section className="sign-in-content">
+		  <section className="sign-in-content">
 			<i className="fa fa-user-circle sign-in-icon"></i>
 			<h1>Sign In</h1>
-			<form onSubmit={handleSignIn}>
-			<div className="input-wrapper">
+			<form onSubmit={handleSignIn} data-testid="form">
+			  <div className="input-wrapper">
 				<Field
-				type={FIELD_TYPES.INPUT_TEXT}
-				placeholder=""
-				label="Username"
-				id="username"
+				  type={FIELD_TYPES.INPUT_TEXT}
+				  placeholder=""
+				  label="Username"
+				  id="username"
+				  testId="username"
 				/>
-			</div>
-			<div className="input-wrapper">
+			  </div>
+			  <div className="input-wrapper">
 				<Field
-				type={FIELD_TYPES.PASSWORD}
-				placeholder=""
-				label="Password"
-				id="password"
+				  type={FIELD_TYPES.PASSWORD}
+				  placeholder=""
+				  label="Password"
+				  id="password"
+				  testId="password"
 				/>
-			</div>
-			<div className="input-remember">
+			  </div>
+			  <div className="input-remember">
 				<Field
-				type={FIELD_TYPES.CHECKBOX}
-				placeholder=""
-				label="Remember me"
-				id="remember-me"
+				  type={FIELD_TYPES.CHECKBOX}
+				  placeholder=""
+				  label="Remember me"
+				  id="remember-me"
+				  testId="remember-me"
 				/>
-			</div>
-			<input type="submit" value="Sign In" className="sign-in-button" />
+			  </div>
+			  <input type="submit" value="Sign In" className="sign-in-button" />
 			</form>
-		</section>
+		  </section>
 		</main>
 	);
 }

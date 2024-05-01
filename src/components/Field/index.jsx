@@ -7,7 +7,7 @@ export const FIELD_TYPES = {
   PASSWORD: 4
 };
 
-const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) => {
+const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id, testId}) => {
   let component;
   switch (type) {
     case FIELD_TYPES.INPUT_TEXT:
@@ -19,7 +19,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
             type="text"
             name={name}
             placeholder={placeholder}
-            data-testid="field-testid"
+            data-testid= {testId} // "field-testid"
           />          
         </div>
       );
@@ -33,7 +33,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
               type="password"
               name={name}
               placeholder={placeholder}
-              data-testid="field-testid"
+              data-testid={testId}
             />            
           </div>
         );
@@ -42,7 +42,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
       component = (
         <div>
           <label htmlFor={id}>{label}</label>
-          <textarea name={name} data-testid="field-testid" />;
+          <textarea name={name} data-testid={testId} />;
         </div>
       )
       break;
@@ -52,7 +52,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
             <input 
               type="checkbox" 
               id={id} 
-              data-testid="field-testid" 
+              data-testid={testId} 
             />
             <label htmlFor={id}>{label}</label>
           </div>
@@ -67,7 +67,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder, id}) =
             type="text"
             name={name}
             placeholder={placeholder}
-            data-testid="field-testid"
+            data-testid={testId}
           />          
         </div>
       );
@@ -90,6 +90,7 @@ Field.propTypes = {
    placeholder: "",
    type: FIELD_TYPES.INPUT_TEXT,
    name: "field-name",
+   testId: "field-testid"
  }
 
 export default Field;
