@@ -1,11 +1,16 @@
+// Importation du composant FeatureItem depuis le fichier "../FeatureItem"
 import FeatureItem from "../FeatureItem";
-// eslint-disable-next-line import/order
+
+// Importation de la fonction v4 (pour générer des UUID) depuis la bibliothèque 'uuid'
 import { v4 } from 'uuid';
 
+// Création d'un alias pour la fonction v4
 const uuidv4 = v4;
 
+// Définition du composant Feature
 function Feature() {
 
+    // Rendu du composant Feature
     return (
         <section className="features">
             <h2 className="sr-only">Features</h2>
@@ -37,4 +42,5 @@ function Feature() {
     )
 }
 
-export default Feature
+// Exportation du composant Feature pour être utilisé dans d'autres parties de l'application
+export default Feature;
