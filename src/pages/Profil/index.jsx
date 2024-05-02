@@ -56,13 +56,14 @@ function Profil() {
 		<section className="sign-in-content">
 			<i className="fa fa-user-circle sign-in-icon"></i>
 			<h1>Edit name</h1>
-			<form onSubmit={handleEditName}>
+			<form onSubmit={handleEditName} data-testid="form">
                 <div className="input-wrapper">
                     <Field
                     type={FIELD_TYPES.INPUT_TEXT}
                     placeholder=""
                     label="Username"
                     id="username"
+                    testId="username"
                     />
                 </div>
 
