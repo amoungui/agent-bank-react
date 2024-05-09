@@ -148,7 +148,7 @@ paths:
     post:
       tags:
         - Transactions Module
-      summary: Update Transaction
+      summary: Create Transaction
       description: API for updating information on a specific transaction.
       parameters:
         - in: path
@@ -191,6 +191,60 @@ paths:
             $ref: '#/definitions/ApiResponse'
         '404':
           description: Transaction not found  
+  /transactions/{transactionId}:
+    put:
+      tags:
+        - Transactions Module
+      summary: Replace Transaction
+      description: API for replacing information on a specific transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          description: Transaction ID to replace
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Transaction replace payload
+          required: true
+          schema:
+            $ref: '#/definitions/TransactionUpdate'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successfully replaced transaction
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '404':
+          description: Transaction not found
+    patch:
+      tags:
+        - Transactions Module
+      summary: Modify Transaction
+      description: API for modifying information on a specific transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          description: Transaction ID to modify
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Transaction modify payload
+          required: true
+          schema:
+            $ref: '#/definitions/TransactionUpdate'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successfully modified transaction
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '404':
+          description: Transaction not found
+
 
 securityDefinitions:
   Bearer:
