@@ -1,5 +1,5 @@
 // Importation du composant FeatureItem depuis le fichier "../FeatureItem"
-import FeatureItem from "../FeatureItem";
+import FeatureItem from "../FeatureItem/FeatureItem";
 
 // Importation de la fonction v4 (pour générer des UUID) depuis la bibliothèque 'uuid'
 import { v4 } from 'uuid';
