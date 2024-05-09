@@ -13,7 +13,7 @@ export const FIELD_TYPES = {
 };
 
 // Définition de la fonction Profil
-function Profil() {
+const Profil = () => {
 	// Utilisation du hook useNavigate
 	const navigate  = useNavigate();
 	// Utilisation du hook useDispatch
