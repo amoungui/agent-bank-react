@@ -1,5 +1,5 @@
 // Importation du composant Button depuis le fichier "../Button"
-import Button from "../Button";
+import Button from "../Button/Button";
 
 // Définition du composant Card
 function Card({ accountTitle, accountAmount, accountAmountDescription }) {

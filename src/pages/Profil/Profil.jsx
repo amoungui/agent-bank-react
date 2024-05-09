@@ -1,5 +1,5 @@
 // Importation du composant Field
-import Field from "../../components/Field";
+import Field from "../../components/Field/Field";
 // Importation des hooks useDispatch et useSelector de Redux
 import { useDispatch, useSelector } from 'react-redux';
 // Importation du hook useNavigate de react-router-dom

@@ -8,9 +8,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Provider } from 'react-redux'
 // Importation des composants de l'application
 import Home from './pages/Home/Home'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Error from './components/Error'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Error from './components/Error/Error'
 import SignIn from './pages/SignIn/SignIn'
 import User from "./pages/user/User";
 import Profil from './pages/Profil/Profil';
