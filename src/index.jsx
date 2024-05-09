@@ -11,9 +11,9 @@ import Home from './pages/Home/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './components/Error'
-import SignIn from './pages/SignIn'
-import User from "./pages/user";
-import Profil from './pages/Profil';
+import SignIn from './pages/SignIn/SignIn'
+import User from "./pages/user/User";
+import Profil from './pages/Profil/Profil';
 // Importation du store Redux
 import store from "./app/store"
 
