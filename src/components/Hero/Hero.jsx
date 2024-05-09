@@ -2,7 +2,7 @@
 import backgroundImage from '../../assets/img/bank-tree.webp';
 
 // Définition du composant Hero
-function Hero() {
+const Hero = () => {
     // Définition du style du héros, qui inclut l'image de fond
     const heroStyle = {
         backgroundImage: `url(${backgroundImage})`,
