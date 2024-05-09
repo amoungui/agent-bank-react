@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 
 // Importation du composant Image depuis le fichier "../Image"
-import Image from "../Image";
+import Image from "../Image/Image";
 
 // Importation de la fonction v4 (pour générer des UUID) depuis la bibliothèque 'uuid'
 import { v4 } from 'uuid';
