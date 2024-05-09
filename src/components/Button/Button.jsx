@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from "prop-types";
 
 // Définition du composant Button
-function Button({title, className, path}) {
+const Button = ({title, className, path}) => {
     // Utilisation du hook useNavigate pour naviguer entre les routes
     const navigate = useNavigate();
     

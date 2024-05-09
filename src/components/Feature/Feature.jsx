@@ -8,7 +8,7 @@ import { v4 } from 'uuid';
 const uuidv4 = v4;
 
 // Définition du composant Feature
-function Feature() {
+const Feature = () => {
 
     // Rendu du composant Feature
     return (

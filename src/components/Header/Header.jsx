@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signOut } from '../../context/DataContext/index';
 
 // Définition du composant Header
-function Header() {
+const Header = () => {
     // Utilisation du hook useSelector pour accéder à l'état de l'authentification et du nom d'utilisateur
     const isLoggedIn = useSelector(state => state.auth.token);
     const username = useSelector(state => state.auth.username) || localStorage.getItem('username');

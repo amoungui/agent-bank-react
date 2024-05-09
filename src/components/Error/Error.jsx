@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 
 // Définition du composant Error
-function Error() {
+const Error = () => {
     // Rendu du composant Error
     return (
         // Début du contenu principal

@@ -2,7 +2,7 @@
 import Button from "../Button/Button";
 
 // Définition du composant Card
-function Card({ accountTitle, accountAmount, accountAmountDescription }) {
+const Card = ({ accountTitle, accountAmount, accountAmountDescription }) => {
   // Rendu du composant Card
   return (
     // Début de la section du compte

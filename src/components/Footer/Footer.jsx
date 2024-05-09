@@ -1,5 +1,5 @@
 // Définition du composant Footer
-function Footer() {
+const Footer = () => {
 
     // Rendu du composant Footer
     return (

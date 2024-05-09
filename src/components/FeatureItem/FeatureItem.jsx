@@ -11,7 +11,7 @@ import { v4 } from 'uuid';
 const uuidv4 = v4;
 
 // Définition du composant FeatureItem
-function FeatureItem({ imageSrc, imageAlt, title, description, dataTestid }) {
+const FeatureItem = ({ imageSrc, imageAlt, title, description, dataTestid }) => {
 
     // Rendu du composant FeatureItem
     return (
