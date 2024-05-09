@@ -1,7 +1,7 @@
 import Hero from "../../components/Hero";
 import Feature from "../../components/Feature";
 
-function App() {
+function Home() {
     
   return (
     <main>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

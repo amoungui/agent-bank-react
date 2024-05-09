@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // Importation du composant Provider de react-redux
 import { Provider } from 'react-redux'
 // Importation des composants de l'application
-import Home from './pages/Home/'
+import Home from './pages/Home/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './components/Error'

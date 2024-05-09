@@ -1,4 +1,4 @@
-// Définition des types d'actions
+// Définition des types d'actions bassouat8@gmail.com
 export const SIGN_IN = 'SIGN_IN'; // Action pour se connecter
 export const SIGN_OUT = 'SIGN_OUT'; // Action pour se déconnecter
 export const GET_USER_DETAILS = 'GET_USER_DETAILS'; // Action pour obtenir les détails de l'utilisateur
