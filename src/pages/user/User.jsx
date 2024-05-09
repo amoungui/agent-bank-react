@@ -2,13 +2,12 @@ import Card from "../../components/Card/Card";
 import Button from "../../components/Button/Button";
 import { useSelector } from 'react-redux';
 
-function User() {
+const User = () => {
     const isLoggedIn = useSelector(state => state.auth.token);
     const username = useSelector(state => state.auth.username) || localStorage.getItem('username');
 
 	if (isLoggedIn){
 		return (
-
 			<main className="main bg-dark">
 				<div className="header">
 				<h1>Welcome back<br />{username ? username : 'Tony Jarvis'} !</h1>
