@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 
 // Définition du composant Image
-function Image({ imageSrc, imageAlt, dataTestid }) {
+const Image = ({ imageSrc, imageAlt, dataTestid }) => {
 
     // Rendu du composant Image
     return (
