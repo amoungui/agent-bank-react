@@ -2,7 +2,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
 // Importation du composant 'Field' et de l'objet 'FIELD_TYPES' depuis le répertoire courant
-import Field, { FIELD_TYPES } from "./index";
+import Field, { FIELD_TYPES } from "./Field";
 
 // Début de la description des tests pour le composant 'Field'
 describe("When a field is created", () => {

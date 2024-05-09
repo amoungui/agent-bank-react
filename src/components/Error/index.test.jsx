@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Importation du composant Error depuis le fichier './index'
-import Error from './index';
+import Error from './Error';
 
 // Définition du test 'renders Error component correctly'
 test('renders Error component correctly', () => {

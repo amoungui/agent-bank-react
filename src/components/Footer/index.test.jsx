@@ -2,7 +2,7 @@
 import { render, screen } from "@testing-library/react";
 
 // Importation du composant 'Footer' depuis le répertoire courant
-import Footer from "./index";
+import Footer from "./Footer";
 
 // Début du bloc describe des tests pour le composant 'Footer'
 describe("When a Footer component is created", () => {

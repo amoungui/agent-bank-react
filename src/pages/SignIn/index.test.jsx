@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 // Importation du store Redux
 import store from '../../app/store';
 // Importation du composant SignIn
-import SignIn from './index';
+import SignIn from './SignIn';
 // Importation de la bibliothèque nock pour simuler des requêtes HTTP
 import nock from 'nock';
 

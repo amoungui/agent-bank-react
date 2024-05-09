@@ -2,7 +2,7 @@
 import { render, screen } from "@testing-library/react";
 
 // Importation du composant 'FeatureItem' depuis le répertoire courant
-import FeatureItem from "./index";
+import FeatureItem from "./FeatureItem";
 // eslint-disable-next-line import/order
 import { v4 } from 'uuid';
 

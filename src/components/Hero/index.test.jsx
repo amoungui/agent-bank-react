@@ -2,7 +2,7 @@
 import { render, screen } from "@testing-library/react";
 
 // Importation du composant 'Hero' depuis le répertoire courant
-import Hero from "./index";
+import Hero from "./Hero";
 
 import backgroundImage from '../../assets/img/bank-tree.webp';
 

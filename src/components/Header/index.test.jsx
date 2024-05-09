@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../../app/store';
 // Importation du composant 'Header' depuis le répertoire courant
-import Header from "./index";
+import Header from "./Header";
 
 // Début du bloc describe des tests pour le composant 'Header'
 describe("When a Header component is created", () => {
