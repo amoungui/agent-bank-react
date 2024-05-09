@@ -16,7 +16,7 @@ export const FIELD_TYPES = {
 };
 
 // Définition de la fonction SignIn
-function SignIn() {
+const SignIn = () => {
   // Utilisation du hook useNavigate
   const navigate  = useNavigate();
   // Utilisation du hook useDispatch
